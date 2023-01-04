@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "prepare": "husky install"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -18,9 +19,14 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^8.30.0",
-    "eslint-plugin-vue": "^9.8.0"
+    "eslint-plugin-vue": "^9.8.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix"
   }
 }

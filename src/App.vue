@@ -1,13 +1,15 @@
 <template>
   <mainScreen v-if="statusMatch === 'default'" @onStart="onHandleBeforeStart($event)" />
   <interactScreen v-if="statusMatch === 'match'" :cardsContext="settings.cardsContext" @onFinish="onGetResult" />
-  <resultScreen v-if="statusMatch === 'result'" :timer="timer" @onStartAgain="statusMatch = 'default'" />
+  <resultScreen v-if="statusMatch === 'result'" :timer="timer" @onStartAgain="onStart" />
+  <copyrightScreen />
 </template>
 
 <script>
 import mainScreen from "./components/mainScreen.vue";
 import interactScreen from "./components/interactScreen.vue";
 import resultScreen from "./components/resultScreen.vue";
+import copyrightScreen from "./components/copyrightScreen.vue";
 import { shuffled } from "./utils/array";
 export default {
   name: "App",
@@ -25,7 +27,8 @@ export default {
   components: {
     mainScreen,
     interactScreen,
-    resultScreen
+    resultScreen,
+    copyrightScreen
   },
   methods: {
     onHandleBeforeStart(config) {
@@ -42,6 +45,11 @@ export default {
       this.timer = new Date().getTime() - this.settings.startedAt;
 
       this.statusMatch = "result";
+    },
+
+    onStart() {
+      this.statusMatch = 'default';
+      console.log("Start again");
     }
   },
 };
