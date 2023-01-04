@@ -1,6 +1,6 @@
 <template>
     <div class="copyright">
-        pokemon flip card
+        pokemon game flip card
         <a href="#">view here</a>
     </div>
 </template>
