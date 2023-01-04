@@ -1,9 +1,9 @@
 <template>
     <div class="card" :class="{ 'disabled': isDisabled }" :style="{
-                height: `${(isHeight - 16*4) / Math.sqrt(cardsContext.length) -16}px`,
-                width: `${(((1200 - 16*4) / Math.sqrt(cardsContext.length) -16) * 3) / 4}px`,
-                perspective: `${(((1200 - 16*4) / Math.sqrt(cardsContext.length) -16) * 3) / 4 * 2}px`
-            }">
+        height: `${(isHeight - 16*4) / Math.sqrt(cardsContext.length) -16}px`,
+        width: `${(((1200 - 16*4) / Math.sqrt(cardsContext.length) -16) * 3) / 4}px`,
+        perspective: `${(((1200 - 16*4) / Math.sqrt(cardsContext.length) -16) * 3) / 4 * 2}px`
+    }">
         <div class="card__inner" :class="{ 'is-flipped': isFlipped }" @click="onToggleFipCard">
             <div class="card__face card__face--front">
                 <div class="card__content"

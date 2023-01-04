@@ -1,10 +1,10 @@
 <template>
     <div class="screen">
         <div class="screen__inner" :style="{
-    width: `${((((1200 - 16 * 4) / Math.sqrt(cardsContext.length) - 16) * 3) / 4 + 16) * Math.sqrt(cardsContext.length)}px`
-}">
+            width: `${((((1200 - 16 * 4) / Math.sqrt(cardsContext.length) - 16) * 3) / 4 + 16) * Math.sqrt(cardsContext.length)}px`
+        }">
             <card-Flip v-for="(card, index) in cardsContext" :key="index" :ref="`card-${index}`"
-                :imgBackFaceUrl="`images/${card}.png`" :card="{ index, value: card }" @onFlip="checkRule($event)"
+                :imgBackFaceUrl="`images/${card}.jpg`" :card="{ index, value: card }" @onFlip="checkRule($event)"
                 :cardsContext="cardsContext" />
         </div>
     </div>

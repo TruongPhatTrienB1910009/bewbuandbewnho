@@ -1,7 +1,7 @@
 <template>
     <div class="copyright">
-        pokemon game flip card
-        <a href="#">view here</a>
+        Memories love game for my wife
+        <a href="#">Bew Nho</a>
     </div>
 </template>
 
